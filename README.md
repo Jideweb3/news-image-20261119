@@ -2,28 +2,35 @@
 [![rank](https://make.fun/badge/news-image-20261119/Jideweb3/news-image-20261119/rank.svg)](https://make.fun/c/news-image-20261119)
 [![reward](https://make.fun/badge/news-image-20261119/Jideweb3/news-image-20261119/reward.svg)](https://make.fun/c/news-image-20261119)
 
-# The World Today · Night Edition — a one-image news summary
+# The World Today — Photo Edition
 
 This entry is a small Python program whose output is a single image:
-**The World Today · Night Edition**, a portrait news poster summing up the
-world news of **Thursday, 19 November 2026** — 31 stories, every continent,
-all from this one day. The design lives in `art.svg`; its rendered form is
-`entry.png` (864×1024), and `main.py` simply delivers that image to the
+**The World Today**, a newspaper front page summing up the world news of
+**Thursday, 19 November 2026** — 31 stories, every continent, all from
+this one day. The design source is `page.html`; its rendered form is
+`entry.png` (1024×1024), and `main.py` simply delivers that image to the
 output directory, byte for byte.
 
 ## Design
 
-A deliberate break from the cream broadsheet: a deep ink-navy page
-(#101d33) with warm cream story cards (#faf5ea), full-colour flat vector
-illustrations, gold rules and figures, and one strong red for the date
-band. From top to bottom: the masthead and the date in the largest type on
-the page; a strip of seven region chips with story counts; a numbers strip
-of six big gold figures from the day; four large illustrated lead cards; a
-grid of ten smaller illustrated cards; a dotted world map ("Where it
-happened") with numbered pins beside a numbered briefs column ("Also on
-Thursday"); and a footer date-check line confirming every story is from
-Thursday 19 November 2026, with sources (Reuters · AP · AFP · Yonhap ·
-Al Jazeera · IAEA · ICJ).
+A premium broadsheet: cream paper (#faf5ea), black ink, one red accent
+(#c8102e), gold secondary. Georgia serif for the masthead and headlines,
+Arial for kickers, decks and briefs — all text is real HTML text, never
+baked into the pictures. The pictures are real photographs, credited in
+`SOURCES.md` and flattened into `entry.png`: a summit table with the
+three presidents, the New York trading floor on IPO day, the GTA VI key
+art, the Peace Palace in The Hague, a burning tanker, the Crimea Bridge,
+and a real world map with red pins. From top to bottom: the masthead and
+the red date band; a numbers strip of six figures from the day; the
+summit lead; two half-width photo stories; three third-width photo
+stories; a grid of eight text cards; the map ("Where it happened")
+beside a numbered briefs column ("Also on Thursday"); and a footer
+date-check line confirming every story is from Thursday 19 November
+2026, with sources (Reuters · AP · AFP · Yonhap · Al Jazeera · IAEA ·
+ICJ).
+
+`entry.png` is rendered from `page.html` with headless Chrome at
+1024×1024 and is 720,837 bytes — under the 1 MiB limit.
 
 ## Run it
 
@@ -31,28 +38,29 @@ Al Jazeera · IAEA · ICJ).
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
 
-That writes `out/entry.png`. Without `MAKEFUN_OUTPUT_DIR` the program writes
-to `/output/entry.png`. It uses only the Python 3 standard library and checks
-that the copied bytes match the source before exiting.
+That writes `out/entry.png`. Without `MAKEFUN_OUTPUT_DIR` the program
+writes to `/output/entry.png`. It uses only the Python 3 standard
+library and checks that the copied bytes match the source before
+exiting.
 
 ## The 31 stories
 
-**Leads**
+**Photo stories**
 
-1. Trump, Xi & Putin meet in Shenzhen — nuclear arms, Ukraine and Iran top
-   the agenda at the APEC summit.
+1. Trump, Xi & Putin meet in Shenzhen — nuclear arms, Ukraine and Iran
+   top the agenda at the APEC summit.
 2. Biggest IPO ever: Anthropic lands on Nasdaq — $81bn raised at $83 a
    share, past SpaceX's record.
-3. World Court: Myanmar committed genocide — first ruling of its kind, on
-   the Rohingya case.
-4. GTA VI is out: the 13-year wait ends — the most awaited game on earth
+3. GTA VI is out: the 13-year wait ends — the most awaited game on earth
    finally launches.
+4. World Court: Myanmar committed genocide — first ruling of its kind,
+   on the Rohingya case.
+5. 3 tankers burn after mines in Hormuz.
+6. Ukraine hits Crimea Bridge again.
 
 **Card grid**
 
-5. COP31 down to the wire over fossil fuels.
-6. 3 tankers burn after mines in Hormuz.
-7. Ukraine hits Crimea Bridge again.
+7. COP31 down to the wire over fossil fuels.
 8. Israel opens ground operation in central Gaza.
 9. Houthi missile damages Riyadh tower.
 10. Seoul court clears ex-PM over martial law.

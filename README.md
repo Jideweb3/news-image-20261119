@@ -2,7 +2,10 @@
 [![rank](https://make.fun/badge/news-image-20261119/Jideweb3/news-image-20261119/rank.svg)](https://make.fun/c/news-image-20261119)
 [![reward](https://make.fun/badge/news-image-20261119/Jideweb3/news-image-20261119/reward.svg)](https://make.fun/c/news-image-20261119)
 
-# The World Today — Photo Edition
+# The World Today — Photo Edition (Slim File)
+
+This version carries the exact same page as the Photo Edition, encoded
+as a JPEG under 400 KB instead of a PNG.
 
 This entry is a small Python program whose output is a single image:
 **The World Today**, a newspaper front page summing up the world news of

@@ -18,6 +18,7 @@ from pathlib import Path
 IMAGE_NAME = "entry.png"
 DEFAULT_OUTPUT_DIR = "/output"
 PNG_SIGNATURE = b"\x89PNG\r\n\x1a\n"
+JPEG_SIGNATURE = b"\xff\xd8"
 
 
 def find_source() -> Path:
@@ -30,8 +31,9 @@ def main() -> int:
     if not source.is_file():
         print(f"error: source image not found: {source}", file=sys.stderr)
         return 1
-    if not source.read_bytes()[:8] == PNG_SIGNATURE:
-        print(f"error: source is not a PNG image: {source}", file=sys.stderr)
+    head = source.read_bytes()[:8]
+    if not (head == PNG_SIGNATURE or head[:2] == JPEG_SIGNATURE):
+        print(f"error: source is not a PNG or JPEG image: {source}", file=sys.stderr)
         return 1
 
     output_dir = Path(os.environ.get("MAKEFUN_OUTPUT_DIR", DEFAULT_OUTPUT_DIR))

@@ -2,10 +2,10 @@
 [![rank](https://make.fun/badge/news-image-20261119/Jideweb3/news-image-20261119/rank.svg)](https://make.fun/c/news-image-20261119)
 [![reward](https://make.fun/badge/news-image-20261119/Jideweb3/news-image-20261119/reward.svg)](https://make.fun/c/news-image-20261119)
 
-# The World Today — Photo Edition (Slim File)
+# The World Today — Photo Edition (XS File)
 
 This version carries the exact same page as the Photo Edition, encoded
-as a JPEG under 400 KB instead of a PNG.
+as a JPEG under 150 KB instead of a PNG.
 
 This entry is a small Python program whose output is a single image:
 **The World Today**, a newspaper front page summing up the world news of
@@ -32,8 +32,9 @@ date-check line confirming every story is from Thursday 19 November
 2026, with sources (Reuters · AP · AFP · Yonhap · Al Jazeera · IAEA ·
 ICJ).
 
-`entry.png` is rendered from `page.html` with headless Chrome at
-1024×1024 and is 720,837 bytes — under the 1 MiB limit.
+`entry.png` is the page rendered from `page.html` at 1024×1024, encoded
+from the lossless render as a JPEG of 144,753 bytes — well under the
+1 MiB limit.
 
 ## Run it
 
